@@ -5,7 +5,6 @@ from statsmodels.tsa.statespace.sarimax import SARIMAX
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 
 # Load stock data from CSV file
-# Replace 'your_stock_data.csv' with the actual file path or data source
 file_path = 'yahoo_stock.csv'
 stock_data = pd.read_csv(file_path, parse_dates=['Date'], index_col='Date')
 
@@ -19,8 +18,8 @@ train_size = int(len(stock_data) * 0.8)
 train, test = stock_data['Close'][:train_size], stock_data['Close'][train_size:]
 
 # Train the SARIMA model
-order = (1, 1, 1)  # Replace with appropriate order (p, d, q) values based on your data
-seasonal_order = (1, 1, 1, 12)  # Replace with appropriate seasonal order (P, D, Q, s) values based on your data
+order = (1, 1, 1)  
+seasonal_order = (1, 1, 1, 12)  
 model = SARIMAX(train, order=order, seasonal_order=seasonal_order)
 fit_model = model.fit()
 
