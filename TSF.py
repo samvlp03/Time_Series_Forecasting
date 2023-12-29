@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 
-# Load stock data from CSV file
+
 file_path = 'yahoo_stock.csv'
 stock_data = pd.read_csv(file_path, parse_dates=['Date'], index_col='Date')
 
